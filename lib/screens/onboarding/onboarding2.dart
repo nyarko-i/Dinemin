@@ -6,8 +6,8 @@ import '../../constants/sizes.dart';
 import '../../routes/app_routes.dart';
 import '../widgets/custom_button.dart';
 
-class Onboarding1 extends StatelessWidget {
-  const Onboarding1({super.key});
+class Onboarding2 extends StatelessWidget {
+  const Onboarding2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class Onboarding1 extends StatelessWidget {
 
             // Image
             Expanded(
-              child: Image.asset('assets/onboarding1.png', fit: BoxFit.contain),
+              child: Image.asset('assets/logo.png', fit: BoxFit.contain),
             ),
             const SizedBox(height: 20),
 
@@ -46,7 +46,7 @@ class Onboarding1 extends StatelessWidget {
             CustomButton(
               text: 'Continue',
               onPressed: () {
-                Navigator.pushReplacementNamed(context, AppRoutes.onboarding2);
+                Navigator.pushReplacementNamed(context, AppRoutes.login);
               },
             ),
             const SizedBox(height: 12),

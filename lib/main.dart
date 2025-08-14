@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-// Import constants
+// Constants
 import 'constants/colors.dart';
-import 'constants/styles.dart';
 import 'constants/strings.dart';
+
+// Routes
+import 'routes/app_routes.dart';
 
 // Screens
 import 'screens/splash/splash_screen.dart';
+import 'screens/onboarding/onboarding1.dart';
+import 'screens/onboarding/onboarding2.dart';
 
 void main() {
   runApp(const MainApp());
@@ -22,7 +26,7 @@ class MainApp extends StatelessWidget {
       title: AppStrings.appName,
       debugShowCheckedModeBanner: false,
 
-      // Light Theme
+      // Themes
       theme: ThemeData(
         scaffoldBackgroundColor: AppColors.backgroundLight,
         textTheme: GoogleFonts.latoTextTheme(),
@@ -30,24 +34,7 @@ class MainApp extends StatelessWidget {
           seedColor: AppColors.primaryGreen,
           brightness: Brightness.light,
         ),
-        appBarTheme: const AppBarTheme(
-          backgroundColor: AppColors.backgroundLight,
-          foregroundColor: AppColors.textDark,
-          elevation: 0,
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: AppColors.primaryGreen,
-            foregroundColor: Colors.white,
-            textStyle: AppTextStyles.buttonText,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-        ),
       ),
-
-      // Dark Theme
       darkTheme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: AppColors.backgroundDark,
         textTheme: GoogleFonts.latoTextTheme(ThemeData.dark().textTheme),
@@ -55,28 +42,17 @@ class MainApp extends StatelessWidget {
           seedColor: AppColors.primaryGreen,
           brightness: Brightness.dark,
         ),
-        appBarTheme: const AppBarTheme(
-          backgroundColor: AppColors.backgroundDark,
-          foregroundColor: Colors.white,
-          elevation: 0,
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: AppColors.primaryGreen,
-            foregroundColor: Colors.white,
-            textStyle: AppTextStyles.buttonText,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(12)),
-            ),
-          ),
-        ),
       ),
-
-      // Default to light mode but allow dark mode check
       themeMode: ThemeMode.light,
 
-      // Start screen
-      home: const SplashScreen(),
+      // Routes
+      initialRoute: AppRoutes.splash,
+      routes: {
+        AppRoutes.splash: (context) => const SplashScreen(),
+        AppRoutes.onboarding1: (context) => const Onboarding1(),
+        AppRoutes.onboarding2: (context) => const Onboarding2(),
+        // AppRoutes.login: (context) => const LoginScreen(), // later
+      },
     );
   }
 }
