@@ -1,5 +1,6 @@
+import 'package:dinemin/constants/colors.dart';
 import 'package:flutter/material.dart';
-import '../../constants/colors.dart';
+//import '../../constants/colors.dart';
 import '../../constants/styles.dart';
 import '../../constants/strings.dart';
 import '../../constants/sizes.dart';
@@ -15,11 +16,28 @@ class Onboarding2 extends StatelessWidget {
     double smallSize = 30; // small circles size
 
     return Scaffold(
-      backgroundColor: AppColors.backgroundLight,
       body: Padding(
         padding: const EdgeInsets.all(AppSizes.padding),
         child: Column(
           children: [
+            SafeArea(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "assets/logo.png",
+                    height: 30,
+                    fit: BoxFit.contain,
+                  ),
+                  Text(
+                    "Dinemin",
+                    style: AppTextStyles.buttonText.copyWith(
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+              ),
+            ),
             const SizedBox(height: 60),
 
             // Main image with small circles
@@ -53,8 +71,8 @@ class Onboarding2 extends StatelessWidget {
 
                     // Bottom-left small circle
                     Positioned(
-                      bottom: smallSize / 1,
-                      left: smallSize / 1,
+                      bottom: smallSize,
+                      left: smallSize / 0.75,
                       child: _buildSmallCircle(
                         "assets/onboarding1.png",
                         smallSize,
@@ -64,7 +82,7 @@ class Onboarding2 extends StatelessWidget {
                     // Bottom-right small circle
                     Positioned(
                       bottom: smallSize / 1,
-                      right: smallSize / 1,
+                      right: smallSize / 0.75,
                       child: _buildSmallCircle(
                         "assets/onboarding1.png",
                         smallSize,
@@ -78,10 +96,11 @@ class Onboarding2 extends StatelessWidget {
 
             // Title
             Text(
-              AppStrings.onboardingTitle1,
+              AppStrings.onboardingTitle2,
               style: AppTextStyles.heading1,
               textAlign: TextAlign.center,
             ),
+
             const SizedBox(height: 10),
 
             // Subtitle
@@ -103,12 +122,30 @@ class Onboarding2 extends StatelessWidget {
             const SizedBox(height: 12),
 
             // Skip to Login
-            TextButton(
-              onPressed: () {
-                Navigator.pushReplacementNamed(context, AppRoutes.login);
-              },
-              child: const Text('Sign In'),
+            SizedBox(
+              width: double.infinity,
+              child: TextButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, AppRoutes.login);
+                },
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.grey.shade200,
+                  padding: const EdgeInsets.symmetric(vertical: 14),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                child: Text(
+                  'Sign In',
+                  style: TextStyle(
+                    color: AppColors.primaryGreen,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
             ),
+
             const SizedBox(height: 40),
           ],
         ),

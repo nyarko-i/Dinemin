@@ -5,7 +5,7 @@ import 'colors.dart';
 class AppTextStyles {
   static final heading1 = GoogleFonts.lato(
     fontSize: 28,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w900,
     color: AppColors.textDark,
   );
 

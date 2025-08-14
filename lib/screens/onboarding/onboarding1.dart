@@ -17,7 +17,25 @@ class Onboarding1 extends StatelessWidget {
         padding: const EdgeInsets.all(AppSizes.padding),
         child: Column(
           children: [
-            const SizedBox(height: 60),
+            SafeArea(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "assets/logo.png",
+                    height: 30,
+                    fit: BoxFit.contain,
+                  ),
+                  Text(
+                    "Dinemin",
+                    style: AppTextStyles.buttonText.copyWith(
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 30),
 
             // Image
             Expanded(
@@ -28,6 +46,11 @@ class Onboarding1 extends StatelessWidget {
             // Title
             Text(
               AppStrings.onboardingTitle1,
+              style: AppTextStyles.heading1,
+              textAlign: TextAlign.center,
+            ),
+            Text(
+              AppStrings.onboardingTitle11,
               style: AppTextStyles.heading1,
               textAlign: TextAlign.center,
             ),
@@ -52,11 +75,28 @@ class Onboarding1 extends StatelessWidget {
             const SizedBox(height: 12),
 
             // Skip to Login
-            TextButton(
-              onPressed: () {
-                Navigator.pushReplacementNamed(context, AppRoutes.login);
-              },
-              child: const Text('Sign In'),
+            SizedBox(
+              width: double.infinity,
+              child: TextButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, AppRoutes.login);
+                },
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.grey.shade200,
+                  padding: const EdgeInsets.symmetric(vertical: 14),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                child: Text(
+                  'Sign In',
+                  style: TextStyle(
+                    color: AppColors.primaryGreen,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
             ),
             const SizedBox(height: 40),
           ],
