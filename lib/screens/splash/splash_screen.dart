@@ -1,10 +1,26 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import '../../constants/colors.dart';
 import '../../constants/styles.dart';
 import '../../constants/strings.dart';
+import '../../routes/app_routes.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(seconds: 2), () {
+      Navigator.pushReplacementNamed(context, AppRoutes.onboarding1);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +30,8 @@ class SplashScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            //logo
-            Image.asset('assets/logo.png', height: 90),
-            const SizedBox(height: 2),
-            //App name
+            Image.asset('assets/logo.png', height: 120),
+            const SizedBox(height: 20),
             Text(
               AppStrings.appName,
               style: AppTextStyles.heading1.copyWith(color: Colors.white),

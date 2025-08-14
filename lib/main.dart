@@ -12,6 +12,7 @@ import 'routes/app_routes.dart';
 import 'screens/splash/splash_screen.dart';
 import 'screens/onboarding/onboarding1.dart';
 import 'screens/onboarding/onboarding2.dart';
+import 'screens/auth/login_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -51,7 +52,7 @@ class MainApp extends StatelessWidget {
         AppRoutes.splash: (context) => const SplashScreen(),
         AppRoutes.onboarding1: (context) => const Onboarding1(),
         AppRoutes.onboarding2: (context) => const Onboarding2(),
-        // AppRoutes.login: (context) => const LoginScreen(), // later
+        AppRoutes.login: (context) => const LoginScreen(),
       },
     );
   }

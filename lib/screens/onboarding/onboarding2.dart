@@ -21,7 +21,7 @@ class Onboarding2 extends StatelessWidget {
 
             // Image
             Expanded(
-              child: Image.asset('assets/logo.png', fit: BoxFit.contain),
+              child: Image.asset('assets/onboarding2.png', fit: BoxFit.contain),
             ),
             const SizedBox(height: 20),
 
@@ -35,7 +35,7 @@ class Onboarding2 extends StatelessWidget {
 
             // Subtitle
             Text(
-              AppStrings.onboardingSubtitle1,
+              AppStrings.onboardingSubtitle2,
               style: AppTextStyles.bodyText,
               textAlign: TextAlign.center,
             ),
