@@ -53,8 +53,8 @@ class MainApp extends StatelessWidget {
         AppRoutes.splash: (context) => const SplashScreen(),
         AppRoutes.onboarding1: (context) => const Onboarding1(),
         AppRoutes.onboarding2: (context) => const Onboarding2(),
+        AppRoutes.signup: (context) => const SignupScreen(),
         AppRoutes.login: (context) => const LoginScreen(),
-        AppRoutes.signup: (context) => const SignUpScreen(),
       },
     );
   }

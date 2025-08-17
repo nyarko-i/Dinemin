@@ -128,6 +128,32 @@ class _LoginScreenState extends State<LoginScreen> {
               // Login button
               CustomButton(text: AppStrings.loginCta, onPressed: () {}),
 
+              const SizedBox(height: 14),
+
+              // Don't have account? Sign Up
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Don't have an account?",
+                    style: AppTextStyles.bodyText.copyWith(
+                      color: Colors.grey[700],
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () =>
+                        Navigator.pushNamed(context, AppRoutes.signup),
+                    child: Text(
+                      "Sign Up",
+                      style: AppTextStyles.bodyText.copyWith(
+                        color: AppColors.primaryGreen,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
               const SizedBox(height: 30),
 
               // Divider with text
