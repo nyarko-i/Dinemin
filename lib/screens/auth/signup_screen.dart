@@ -117,7 +117,15 @@ class SignupScreen extends StatelessWidget {
               const SizedBox(height: 30),
 
               // Register button
-              CustomButton(onPressed: () {}, text: AppStrings.registerCta),
+              CustomButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(
+                    context,
+                    AppRoutes.congratulation,
+                  );
+                },
+                text: AppStrings.registerCta,
+              ),
 
               const SizedBox(height: 16),
 

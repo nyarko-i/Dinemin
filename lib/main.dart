@@ -14,6 +14,7 @@ import 'screens/onboarding/onboarding1.dart';
 import 'screens/onboarding/onboarding2.dart';
 import 'screens/auth/login_screen.dart';
 import 'screens/auth/signup_screen.dart';
+import 'screens/auth/congratulation_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -55,6 +56,7 @@ class MainApp extends StatelessWidget {
         AppRoutes.onboarding2: (context) => const Onboarding2(),
         AppRoutes.signup: (context) => const SignupScreen(),
         AppRoutes.login: (context) => const LoginScreen(),
+        AppRoutes.congratulation: (context) => const CongratulationScreen(),
       },
     );
   }
